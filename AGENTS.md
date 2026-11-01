@@ -44,3 +44,70 @@ From BRIEF.md - ShelfLife Book Club Tracker:
 - Ratings must be whole numbers from 1 to 5.
 - Data must be stored in a database and survive a restart.
 - Automated tests must run with `npm test`.
+
+## DESIGN
+
+**Style: Professional Magazine Layout (Editorial + Risograph + Memphis)**
+
+### Colors
+- **Background**: `#F6F1E9` (warm off-white paper)
+- **Text**: `#1A1A1A` (near-black)
+- **Primary accent**: `#0078BF` (Risograph blue)
+- **Secondary accent**: `#FF48B0` (Risograph pink)
+- **Playful accents**: `#FFBE0B` (yellow), `#2EC4B6` (teal)
+
+### Typography
+- **Headlines**: Playfair Display (serif) - big, bold, editorial
+- **Body & UI**: DM Sans (sans-serif) - clean, readable
+- **Labels**: Small uppercase with letter-spacing
+
+### Layout Principles
+- Thin black rules (1px borders) between sections
+- Generous whitespace
+- Clear grid structure
+- Overlapping semi-transparent circles with `mix-blend-mode: multiply` behind page headers and empty states
+- Subtle grain texture on background
+
+### Memphis Touches (edges only)
+- Small squiggles, triangles, and dots in yellow `#FFBE0B` and teal `#2EC4B6`
+- Only near headers and hero corners
+- **NEVER** behind tables or forms
+
+### UI Components
+- **Buttons**: Solid blue (`#0078BF`) or outlined black
+- **Badges**: Pink/blue/yellow tints (semi-transparent backgrounds)
+- **Tables**: Clean with thin rules, bold header row
+- **Cards**: Flat with thin black border (1px), NO shadows
+- **Icons**: lucide-react only
+
+### BANNED (generic AI look)
+- Purple/blue gradients
+- Glassmorphism
+- Neon glow effects
+- Soft blurry shadows
+- Inter font
+- Same rounded card everywhere
+- Emoji as icons
+
+### Shared Components
+All pages must use these components from `src/components/ui/`:
+- `Button` - primary (solid blue) and outline variants
+- `Card` - flat with thin border
+- `Input` - text inputs with labels
+- `Select` - dropdown selects
+- `Badge` - status indicators (pink/blue/yellow tints)
+- `Table` - data tables with thin rules
+- `Modal` - overlay dialogs
+- `EmptyState` - with Risograph circles
+- `LoadingState` - spinner/skeleton
+- `Message` - error/success notifications
+
+### Layout
+- `AppLayout` - wrapper with navigation
+- Navigation: horizontal menu with thin black rule underneath
+- Every page: clear heading (Playfair Display), good spacing, empty state when no data
+
+### Responsive
+- Mobile-first approach
+- Grid collapses to single column on mobile
+- Navigation becomes hamburger menu on small screens
